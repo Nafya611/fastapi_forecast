@@ -1,9 +1,8 @@
 from fastapi import FastAPI
-from routes import Customer_forecast,Item_forecast,item_bulk_forecast
+from routes import Customer_forecast,items_forecast
 
 app = FastAPI()
 
 app.include_router(Customer_forecast.router, prefix="/customer", tags=["customer"])
-app.include_router(Item_forecast.router, prefix="/item", tags=["item"])
-app.include_router(item_bulk_forecast.router, prefix="/items", tags=["bulk-item-forecast"])
+app.include_router(items_forecast.router, prefix="/items", tags=["items-forecast"])
 
